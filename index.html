@@ -21,6 +21,7 @@
         <script src="https://kit.fontawesome.com/4f596f3945.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script src="js/navbar.js"></script>
+        <script src="js/product.js"></script>
         <script src="js/cart.js"></script>
         <script src="js/map.js"></script>
 
@@ -41,36 +42,6 @@
         <!-- Productos -->
         <div id="contenido">
             <section class="productos">
-                <div class="item" draggable="true">
-                    <p class="img">🍓</p>
-                    <h5 class="title">Fresa</h5>
-                    <p class="desc">La fresa es una fruta del bosque adecuada en regímenes dietéticos, dado que tiene escasa concentración de glúcidos. Tiene un sabor muy agradable aunque ligeramente agrio (algunas pocas especies pueden tener sabor dulce).</p>
-                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
-                </div>
-                <div class="item" draggable="true">
-                    <p class="img">🍒</p>
-                    <h5 class="title">Cerezas</h5>
-                    <p class="desc">La cereza, también conocido como guinda, es fruto de varios árboles del género Prunus. La cereza es una fruta rica en vitaminas A, B, C, E, K y PP, en hierro, calcio, magnesio, potasio y azufre.</p>
-                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
-                </div>
-                <div class="item" draggable="true">
-                    <p class="img">🍐</p>
-                    <h5 class="title">Pera</h5>
-                    <p class="desc">La pera comestible es el fruto del peral común (Pyrus communis). La pera es una fruta jugosa, carnosa, y una de las más importantes producidas en las regiones templadas.</p>
-                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
-                </div>
-                <div class="item" draggable="true">
-                    <p class="img">🍌</p>
-                    <h5 class="title">Plátano</h5>
-                    <p class="desc">El plátano (también llamado banana, banano o guineo) es un fruto con cualidades variables en tamaño, color y firmeza, alargado, generalmente curvado y carnoso, rico en almidón cubierto con una cáscara, que puede ser verde, amarilla, roja, púrpura o marrón cuando está madura. Los frutos crecen en piñas que cuelgan de la parte superior de la planta.</p>
-                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
-                </div>
-                <div class="item" draggable="true">
-                    <p class="img">🍉</p>
-                    <h5 class="title">Sandía</h5>
-                    <p class="desc">La sandía es una fruta originaria de África, pero tiene una gran presencia y difusión en Asia. Hoy en día se cultiva de manera extendida por todo el mundo debido a su fruto, un pepónide de enorme tamaño —el récord entre las verduras fue una sandía de 120 kg.</p>
-                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
-                </div>
             </section>
             
             <!-- Carrito -->
@@ -78,7 +49,10 @@
                 <div><i class="fa fa-solid fa-shopping-cart"></i> Carrito de compras</div>
                 <ul id="carrito-lista">
                 </ul>
-                <a id="carrito-comprar" onclick="alert('No se ha podido realizar la transacción')">Comprar</a>
+                <div id="carrito-final">
+                    <p>Total: <i id="carrito-total"></i></p>
+                    <a id="carrito-comprar" href="checkout.html">Comprar</a>
+                </div>
             </section>
         </div>
 

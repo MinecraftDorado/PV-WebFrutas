@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>WebFrutas</title>
+
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/cart.css">
+        <link rel="stylesheet" type="text/css" href="css/checkout.css">
+
+        <!-- Favicon -->
+        <link rel="icon" type="icons/png" href="img/favicon.png">
+
+        <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/4f596f3945.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="js/navbar.js"></script>
+        <script src="js/product.js"></script>
+        <script src="js/cart.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- NavBar -->
+        <nav>
+            <ul>
+                <li class="logo">WebFrutas</li>
+                <li class="items"><a href="index.html"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Inicio</a></li>
+
+                <li class="btn"><a href="#"><i class="fas fa-bars" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+
+        <div id="contenido">
+            <!-- Carrito -->
+            <section class="carrito">
+                <div><i class="fa fa-solid fa-shopping-cart"></i> Carrito de compras</div>
+                <ul id="carrito-lista">
+                </ul>
+                <div id="carrito-final">
+                    <p>Total: <i id="carrito-total"></i></p>
+                </div>
+            </section>
+
+            <div id="metodos">
+                <button id="boton-efectivo" onclick="efectivo()">Efectivo</button>
+                <button id="boton-tarjeta" onclick="tarjeta()">Tarjeta</button>
+
+
+                <!-- Formulario de efectivo -->
+                <section id="formulario-efectivo" hidden="true">
+                    <form id="efectivo" method="post" action="checkout-end.html">
+                        <p>Pago Seguro en efectivo en el local</p>
+                        <img src="img/money.png">
+                        <h5>Nombre de quien va a retirar el pedido</h5>
+                        <input type="text" name="fullname" placeholder="Mateo Rodriguez" required>
+                        <h5>Número de documento</h5>
+                        <input type="text" name="doc" placeholder="11.222.333" minlength="10" maxlength="10" required>
+
+                        </br><input class="submit" type="submit" value="Finalizar">
+                    </form>
+                </section>
+
+                <!-- Formulario de tarjeta -->
+                <section id="formulario-tarjeta" hidden="true">
+                    <form id="tarjeta" method="post" action="checkout-end.html">
+                        <p>Pago Seguro por tarjeta de crédito o débito</p>
+                        <img src="img/cards.jpg">
+                        <h5>Titular de la tarjeta</h5>
+                        <input type="text" name="fullname" placeholder="Mateo Rodriguez" required>
+                        <h5>Número de tarjeta</h5>
+                        <input type="text" name="card" placeholder="1111-2222-3333-4444" minlength="16" maxlength="16" required>
+
+                        <h5>Fecha de vencimiento</h5>
+                        <label for="month">Mes:</label>
+                        <select id="month" name="month" required>
+                            <option value="" disabled selected></option>
+                            <option value="01">Enero</option>
+                            <option value="02">Febrero</option>
+                            <option value="03">Marzo</option>
+                            <option value="04">Abril</option>
+                            <option value="05">Mayo</option>
+                            <option value="06">Junio</option>
+                            <option value="07">Julio</option>
+                            <option value="08">Agosto</option>
+                            <option value="09">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                        <label for="date">Día:</label>
+                        <select id="date" name="date" required>
+                            <option value="" disabled selected></option>
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            <option value="05">5</option>
+                            <option value="06">6</option>
+                            <option value="07">7</option>
+                            <option value="08">8</option>
+                            <option value="09">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        <h5>Código de seguridad</h5>
+                        <input type="text" name="code" pattern="[0-9]{3}" minlength="3" maxlength="3" required>
+
+                        </br><input class="submit" type="submit" value="Pagar y finalizar">
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <i class="fa fa-solid fa-copyright"></i> Bruno Agostini 2023 - <a href="https://github.com/MinecraftDorado" target="_blank">GitHub</a>
+        </footer>
+    </body>
+</html>
+
+<script>
+
+window.addEventListener('load', init)
+function init(){
+    tarjeta()
+}
+
+    function efectivo(){
+        var tarjeta = document.getElementById('formulario-tarjeta');
+        if(tarjeta.hidden == false) {
+            tarjeta.hidden = true
+            document.getElementById('boton-tarjeta').classList.remove('selected')
+        }
+        
+        var efectivo = document.getElementById('formulario-efectivo')
+        if(efectivo.hidden == true){
+            efectivo.hidden = false
+            document.getElementById('boton-efectivo').classList.add('selected')
+        }
+    }
+    function tarjeta(){
+        var tarjeta = document.getElementById('formulario-tarjeta');
+        if(tarjeta.hidden == true) {
+            tarjeta.hidden = false
+            document.getElementById('boton-tarjeta').classList.add('selected')
+        }
+        
+        var efectivo = document.getElementById('formulario-efectivo')
+        if(efectivo.hidden == false){
+            efectivo.hidden = true
+            document.getElementById('boton-efectivo').classList.remove('selected')
+        }
+    }
+</script>

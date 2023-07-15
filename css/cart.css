@@ -35,6 +35,10 @@
     overflow-y: scroll;
 }
 
+.carrito .price {
+    margin-left: auto;
+}
+
 .carrito #carrito-lista a {
     margin-left: auto;
     cursor: pointer;
@@ -43,12 +47,20 @@
     padding-right: 15px;
 }
 
+.carrito #carrito-final {
+    margin-top: auto;
+}
+
+.carrito #carrito-total {
+    font-weight: bold;
+}
+
 .carrito #carrito-comprar {
     padding: 5px 0;
     background-color: green;
     font-weight: bold;
     text-align: center;
     cursor: pointer;
-    margin-top: auto;
     color: white;
+    display: block;
 }

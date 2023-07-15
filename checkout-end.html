@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>WebFrutas</title>
+
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
+
+        <!-- Favicon -->
+        <link rel="icon" type="icons/png" href="img/favicon.png">
+
+        <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/4f596f3945.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="js/navbar.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- NavBar -->
+        <nav>
+            <ul>
+                <li class="logo">WebFrutas</li>
+                <li class="items"><a href="index.html"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Inicio</a></li>
+
+                <li class="btn"><a href="#"><i class="fas fa-bars" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+
+        <div id="back">
+            <h1>Se ha producido un error en la transacción</h1>
+            <a href="index.html">Volver</a>
+        </div>
+
+        <style>
+            #back {
+                width: 100%;
+                text-align: center;
+                margin-top: 20%;
+            }
+
+            #back h1 {
+                margin: 50px;
+            }
+
+            #back a {
+                background-color: green;
+                padding: 5px 20px;
+                border-radius: 8px;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 160%;
+            }
+
+            @media all and (max-width: 900px){
+                footer {
+                    bottom: 0 !important;
+                }
+            }
+        </style>
+
+        <!-- Footer -->
+        <footer>
+            <i class="fa fa-solid fa-copyright"></i> Bruno Agostini 2023 - <a href="https://github.com/MinecraftDorado" target="_blank">GitHub</a>
+        </footer>
+    </body>
+</html>
