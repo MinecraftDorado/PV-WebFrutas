@@ -1,0 +1,54 @@
+
+#contenido {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.carrito {
+    width: 200px;
+    height: 220px;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    background: ghostwhite;
+}
+.over {
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+    -webkit-transform: scale(1.1);
+}
+.elegido {
+    opacity: 30%;
+}
+.item {
+    cursor: move;
+}
+.carrito .producto {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.carrito #carrito-lista {
+    overflow-y: scroll;
+}
+
+.carrito #carrito-lista a {
+    margin-left: auto;
+    cursor: pointer;
+    color: red;
+    font-size: 110%;
+    padding-right: 15px;
+}
+
+.carrito #carrito-comprar {
+    padding: 5px 0;
+    background-color: green;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-top: auto;
+    color: white;
+}

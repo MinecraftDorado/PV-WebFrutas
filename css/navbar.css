@@ -1,0 +1,109 @@
+* {
+    margin: 0%;
+    padding: 0%;
+  }
+  :root {
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+  
+  nav{
+    background: lightblue;
+    padding: .4rem 4.5rem;
+    margin: 0 3rem 0 3rem;
+    border-radius: 0 0 15px 15px;
+    max-height: 100%;
+  }
+  
+  nav .home::before {
+    max-height: 10px;
+  }
+  
+  nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  nav ul li{
+    padding: 1rem 0;
+    cursor: pointer;
+  }
+  
+  nav ul li.items{
+    position: relative;
+    width: auto;
+    margin: 0 1rem;
+    text-align: center;
+    order: 3;
+  }
+  
+  nav ul li.logo{
+    flex: 2;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: default;
+    user-select: none;
+  }
+  nav ul li a{
+    color: black;
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: .4s;
+  }
+  nav ul li.btn{
+    display: none;
+  }
+  nav ul li.btn.hide i:before{
+    content: '\f00d';
+  }
+  
+  
+  /*
+    Responsive
+  */
+  
+  @media all and (max-width: 900px){
+    nav{
+      padding: 0 2rem;
+      border-radius: 0;
+      margin: 0;
+    }
+    nav ul {
+        padding: 0;
+        margin: 0;
+    }
+    nav ul li.items{
+      width: 100%;
+      display: none;
+    }
+    nav ul li.items.show{
+      display: block;
+    }
+    nav ul li.btn{
+      display: block;
+    }
+    nav ul li:hover > ul{
+        z-index: 100;
+        width: inherit;
+    }
+  }
+  
+  
+  .btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }

@@ -1,0 +1,23 @@
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    padding: 1.8rem 0;
+    background: #82074a;
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    color: #fcd462;
+    font-weight: 500;
+    text-decoration:none;
+}
+
+@media all and (max-width: 900px){
+    footer {
+        bottom: auto;
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>WebFrutas</title>
+
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/products.css">
+        <link rel="stylesheet" type="text/css" href="css/order.css">
+        <link rel="stylesheet" type="text/css" href="css/cart.css">
+
+        <!-- Favicon -->
+        <link rel="icon" type="icons/png" href="img/favicon.png">
+
+        <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/4f596f3945.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="js/navbar.js"></script>
+        <script src="js/cart.js"></script>
+        <script src="js/map.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- NavBar -->
+        <nav>
+            <ul>
+                <li class="logo">WebFrutas</li>
+                <li class="items"><a href="#"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Inicio</a></li>
+
+                <li class="btn"><a href="#"><i class="fas fa-bars" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+
+        <!-- Productos -->
+        <div id="contenido">
+            <section class="productos">
+                <div class="item" draggable="true">
+                    <p class="img">🍓</p>
+                    <h5 class="title">Fresa</h5>
+                    <p class="desc">La fresa es una fruta del bosque adecuada en regímenes dietéticos, dado que tiene escasa concentración de glúcidos. Tiene un sabor muy agradable aunque ligeramente agrio (algunas pocas especies pueden tener sabor dulce).</p>
+                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
+                </div>
+                <div class="item" draggable="true">
+                    <p class="img">🍒</p>
+                    <h5 class="title">Cerezas</h5>
+                    <p class="desc">La cereza, también conocido como guinda, es fruto de varios árboles del género Prunus. La cereza es una fruta rica en vitaminas A, B, C, E, K y PP, en hierro, calcio, magnesio, potasio y azufre.</p>
+                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
+                </div>
+                <div class="item" draggable="true">
+                    <p class="img">🍐</p>
+                    <h5 class="title">Pera</h5>
+                    <p class="desc">La pera comestible es el fruto del peral común (Pyrus communis). La pera es una fruta jugosa, carnosa, y una de las más importantes producidas en las regiones templadas.</p>
+                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
+                </div>
+                <div class="item" draggable="true">
+                    <p class="img">🍌</p>
+                    <h5 class="title">Plátano</h5>
+                    <p class="desc">El plátano (también llamado banana, banano o guineo) es un fruto con cualidades variables en tamaño, color y firmeza, alargado, generalmente curvado y carnoso, rico en almidón cubierto con una cáscara, que puede ser verde, amarilla, roja, púrpura o marrón cuando está madura. Los frutos crecen en piñas que cuelgan de la parte superior de la planta.</p>
+                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
+                </div>
+                <div class="item" draggable="true">
+                    <p class="img">🍉</p>
+                    <h5 class="title">Sandía</h5>
+                    <p class="desc">La sandía es una fruta originaria de África, pero tiene una gran presencia y difusión en Asia. Hoy en día se cultiva de manera extendida por todo el mundo debido a su fruto, un pepónide de enorme tamaño —el récord entre las verduras fue una sandía de 120 kg.</p>
+                    <h4 onclick="addCart(this)" class="add-cart">Añadir al carrito</h4>
+                </div>
+            </section>
+            
+            <!-- Carrito -->
+            <section class="carrito">
+                <div><i class="fa fa-solid fa-shopping-cart"></i> Carrito de compras</div>
+                <ul id="carrito-lista">
+                </ul>
+                <a id="carrito-comprar" onclick="alert('No se ha podido realizar la transacción')">Comprar</a>
+            </section>
+        </div>
+
+        <!-- Formulario de pedido -->
+        <section id="formulario-pedido">
+            <form id="pedido">
+                <fieldset>
+                        <legend>Formulario de pedido</legend>
+                        Nombre:
+                        <br><input type="text" name="name" placeholder="Mateo"><br>
+                        Apellido:
+                        <br><input type="text" name="lastname" placeholder="Martínez"><br>
+                        Dirección:
+                        <br><input type="text" id="location" name="location" placeholder="Avenida Rivadavia 1234, Buenos Aires"><a style="border: 2px solid; margin-left: 5px;cursor: pointer;" id="search" onclick="geocode()"><i class="fas fa-search"></i></a></br>
+                        Telefono:
+                        <br><input type="number" name="phone" placeholder="+54 9 11 1234-5678"><br>
+                        Pedido:
+                        <br><textarea type="text" name="desc" placeholder="Buen día, quisiera comprar: 4kg de Manzanas, 10 unidades de naranjas, 1kg de uvas, etc.."></textarea><br>
+
+                        <br><input type="submit" value="Enviar pedido">
+                </fieldset>
+            </form>
+
+            <!-- Mapa -->
+            <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=geocode' async defer></script>
+            <div id="map" style="position:relative;width:600px;height:400px;"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <i class="fa fa-solid fa-copyright"></i> Bruno Agostini 2023 - <a href="https://github.com/MinecraftDorado" target="_blank">GitHub</a>
+        </footer>
+    </body>
+</html>
